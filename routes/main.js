@@ -4,7 +4,24 @@ const router = express.Router();
 const app = express();
 
 // Define our data
-var shopData = { shopName: "Nommy's Bobar", productCategories: ["Boba", "Sadwich", "Soft Drinks", "Hot Drinks"] };
+var shopData = {
+    shopName: "Nommy's Bobar",
+    productCategories: ["Boba", "Sadwich", "Soft Drinks", "Hot Drinks"],
+    shopLocations: [
+        {
+            manager: "Noor Nayem",
+            address: "123 Boba Street, London, UK",
+        },
+        {
+            manager: "Mango Man",
+            address: "911 Mango Road, London, UK",
+        },
+        {
+            manager: "Lychee Woman",
+            address: "001 Lychee Road, London, UK",
+        },
+    ],
+};
 
 // Handle the main routes
 router.get("/", (req, res) => {
@@ -17,14 +34,6 @@ router.get("/about", (req, res) => {
 
 router.get("/search", (req, res) => {
     res.render("search.ejs", shopData);
-});
-
-// Export the router object so index.js can access it
-module.exports = router;
-
-//handles
-app.get("/", function (req, res) {
-    res.render("index.ejs", shopData);
 });
 
 router.get("/search_result", function (req, res) {
@@ -47,3 +56,6 @@ router.post("/registered", (req, res) => {
         emailAddress: req.body.email,
     });
 });
+
+// Export the router object so index.js can access it
+module.exports = router;
