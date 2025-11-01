@@ -4,7 +4,7 @@ const router = express.Router();
 const app = express();
 
 // Define our data
-var shopData = { shopName: "Nommy's Bobar", productCategories: ["Boba", "Shoaib", "Soft Drinks", "Hot Drinks"] };
+var shopData = { shopName: "Nommy's Bobar", productCategories: ["Boba", "Sadwich", "Soft Drinks", "Hot Drinks"] };
 
 // Handle the main routes
 router.get("/", (req, res) => {
@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/about", (req, res) => {
-    res.render("about.ejs");
+    res.render("about.ejs", shopData);
 });
 
 router.get("/search", (req, res) => {

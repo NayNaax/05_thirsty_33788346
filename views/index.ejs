@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title><%=shopName%></title>
-    </head>
-    <body>
+<%- include('partials/header.ejs') %>
+
+        <!--Home page-->
         <h1>Welcome to <%=shopName%></h1>
         <h2>Here are some things that we sell:</h2>
         <ul>
@@ -11,5 +8,7 @@
             <li><%= productCategories[i] %></li>
             <% } %>
         </ul>
+
+    </div> <!-- .container -->
     </body>
 </html>

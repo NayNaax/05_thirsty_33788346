@@ -2,3 +2,4 @@ views/about.ejs
 views/index.ejs
 views/search.ejs
 views/register.ejs
+views/partials/header.ejs

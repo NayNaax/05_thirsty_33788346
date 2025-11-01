@@ -6,7 +6,10 @@ var ejs = require("ejs");
 const app = express();
 const port = 8000;
 
-// Tell Express that we want to use EJS as the templating engine
+// Public folder
+app.use(express.static("public"));
+
+// Configure EJS as the view/template engine
 app.set("view engine", "ejs");
 
 // Set up the body parser
