@@ -26,3 +26,23 @@ module.exports = router;
 app.get("/", function (req, res) {
     res.render("index.ejs", shopData);
 });
+
+router.get("/search_result", function (req, res) {
+    // TODO: search in the database
+    res.send("You searched for " + req.query.search_text + " in " + req.query.category);
+});
+
+router.get("/register", (req, res) => {
+    res.render("register.ejs", shopData);
+});
+
+router.post("/registered", (req, res) => {
+    res.send(
+        " Hello " +
+            req.body.first +
+            " " +
+            req.body.last +
+            " you are now registered! We will send an email to you at" +
+            req.body.email
+    );
+});

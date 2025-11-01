@@ -7,7 +7,12 @@
         <h1>Search Page</h1>
         <h2>Search here:</h2>
         <form action="/search_result" method="GET">
-            <input id="search_box" type="text" name="search_text" />
+            <label for="name_input">Name:</label>
+            <input id="name_input" type="text" name="search_text" />
+            <br>
+            <label for="category_input">Category:</label>
+            <input id="category_input" type="text" name="category" />
+            <br><br>
             <input type="submit" value="OK" />
         </form>
     </body>
