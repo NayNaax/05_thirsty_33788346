@@ -1,0 +1,47 @@
+<%- include('partials/header.ejs') %>
+
+<h1>Customer Survey</h1>
+<p>We would love to hear your feedback!</p>
+
+<form method="POST" action="/survey_result">
+    <!--Details-->
+    <h2>Your Details</h2>
+    <label for="first_name">First Name:</label>
+    <input id="first_name" type="text" name="first_name" required />
+    <br />
+    <label for="surname">Surname:</label>
+    <input id="surname" type="text" name="surname" required />
+    <br />
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="email" required />
+    <br /><br />
+
+    <!--Survey Questions-->
+    <h2>Survey Questions</h2>
+
+    <!--Age-->
+    <label for="age" class="survey-question">How old are you?</label>
+    <input id="age" type="text" name="age" style="width: 60px" />
+    <br /><br />
+
+    <!--Selection-->
+    <label class="survey-question">Which of the following drinks categories do you consume?</label><br />
+    <% productCategories.forEach(function(category) { %>
+    <!--Radio Buttons-->
+    <span style="margin-left: 20px">
+        <input type="radio" id="cat-<%= category %>" name="drink_category" value="<%= category %>" />
+        <label for="cat-<%= category %>" class="survey-option"><%= category %></label><br />
+    </span>
+    <% }); %>
+    <br />
+
+    <!--Student status checkbox-->
+    <label class="survey-question">Are you a student?</label>
+    <span style="margin-left: 20px">
+        <input type="checkbox" id="is_student" name="is_student" />
+        <label for="is_student" class="survey-option">Yes</label>
+    </span>
+    <br /><br />
+
+    <input type="submit" value="Submit Survey" />
+</form>

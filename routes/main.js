@@ -36,6 +36,10 @@ router.get("/search", (req, res) => {
     res.render("search.ejs", shopData);
 });
 
+router.get("/survey", (req, res) => {
+    res.render("survey.ejs", shopData);
+});
+
 router.get("/search_result", function (req, res) {
     res.render("search_result.ejs", {
         ...shopData, // Pass shopData for the header
@@ -54,6 +58,22 @@ router.post("/registered", (req, res) => {
         firstName: req.body.first,
         lastName: req.body.last,
         emailAddress: req.body.email,
+    });
+});
+
+router.post("/survey_result", (req, res) => {
+    // Process checkbox value
+    // If checked, req.body.is_student will be 'on'. If not, it will be undefined.
+    const studentStatus = req.body.is_student ? "Yes" : "No";
+
+    res.render("survey_result.ejs", {
+        ...shopData, // For the header
+        firstName: req.body.first_name,
+        surname: req.body.surname,
+        email: req.body.email,
+        age: req.body.age,
+        drinkCategory: req.body.drink_category || "No preference selected", // Handle case where nothing is selected
+        isStudent: studentStatus,
     });
 });
 

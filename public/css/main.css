@@ -48,7 +48,7 @@ body {
     border-radius: 4px;
 }
 
-/* --- Main Content Container --- */
+/*Main Content Container*/
 .container {
     padding: 20px;
 }
@@ -82,7 +82,10 @@ form {
     border-radius: 5px;
 }
 
-input[type="text"] {
+/*Text and email inputs*/
+input[type="text"],
+input[type="email"],
+input[type="number"] {
     padding: 8px;
     width: 250px;
     border: 1px solid #ccc;
@@ -103,8 +106,24 @@ input[type="submit"]:hover {
     background-color: #555;
 }
 
+/*Label alignment and spacing*/
 label {
     display: inline-block;
     width: 100px;
     margin-bottom: 10px;
+    vertical-align: middle; /*Aligns labels with inputs*/
+    font-weight: bold; /*Made labels bold*/
+}
+
+label.survey-question {
+    width: auto;
+    display: block; /*Puts it on its own line*/
+    font-weight: bold; /*Made labels bold*/
+    margin-bottom: 5px;
+}
+
+label.survey-option {
+    width: auto;
+    font-weight: bold; /*Make options bold*/
+    margin-bottom: 5px;
 }

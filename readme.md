@@ -8,6 +8,7 @@ A simple web app
 -   **About Page:** Learn more about the shop.
 -   **Search:** Find products by name or category.
 -   **Register:** Sign up with your name and email.
+-   **Survey:** Share feedback via a short customer survey.
 -   **Easy Navigation:** Use the menu to get around.
 
 ## How the Project is Organized
@@ -16,6 +17,7 @@ A simple web app
 .
 ├── index.js                    # Main app file
 ├── package.json                # Project info and dependencies
+├── readme.md                   # This file
 ├── routes/
 │   └── main.js                 # Handles page routes
 ├── views/
@@ -25,6 +27,8 @@ A simple web app
 │   ├── search_result.ejs       # Search results page
 │   ├── register.ejs            # Registration form page
 │   ├── registered.ejs          # Registration confirmation page
+│   ├── survey.ejs              # Customer survey form page
+│   ├── survey_result.ejs       # Survey submission results page
 │   └── partials/
 │       └── header.ejs          # Shared menu/header
 └── public/
@@ -38,9 +42,9 @@ A simple web app
 2. Open a terminal in the project folder.
 3. Install the needed packages:
 
-    ```sh
-    npm install
-    ```
+   ```sh
+   npm install
+   ```
 
 ## Dependencies
 
@@ -51,11 +55,11 @@ A simple web app
 
 Start the server:
 
-    ```sh
-    node index.js
-    ```
+```sh
+node index.js
+```
 
-5. Open your browser and go to [http://localhost:8000](http://localhost:8000)
+4. Open your browser and go to [http://localhost:8000](http://localhost:8000)
 
 ## Main Pages
 
@@ -63,11 +67,13 @@ Start the server:
 -   `/about` - About the shop
 -   `/search` - Search for products
 -   `/register` - Sign up
+-   `/survey` - Customer survey
 
 ## How to Use
 
 -   **To Search:** Go to the Search page, type what you want, and pick a category.
 -   **To Register:** Go to Register, fill in your details, and submit.
+-   **To Take the Survey:** Go to Survey, enter your details, answer the questions (age, preferred drink category, student status), and submit to see your results.
 
 ## Styling
 
