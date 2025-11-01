@@ -28,8 +28,11 @@ app.get("/", function (req, res) {
 });
 
 router.get("/search_result", function (req, res) {
-    // TODO: search in the database
-    res.send("You searched for " + req.query.search_text + " in " + req.query.category);
+    res.render("search_result.ejs", {
+        ...shopData, // Pass shopData for the header
+        searchText: req.query.search_text,
+        category: req.query.category,
+    });
 });
 
 router.get("/register", (req, res) => {
@@ -37,12 +40,10 @@ router.get("/register", (req, res) => {
 });
 
 router.post("/registered", (req, res) => {
-    res.send(
-        " Hello " +
-            req.body.first +
-            " " +
-            req.body.last +
-            " you are now registered! We will send an email to you at" +
-            req.body.email
-    );
+    res.render("registered.ejs", {
+        ...shopData, // Pass shopData for the header
+        firstName: req.body.first,
+        lastName: req.body.last,
+        emailAddress: req.body.email,
+    });
 });
